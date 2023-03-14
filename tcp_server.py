@@ -1,3 +1,7 @@
+
+# server
+
+
 import socket
 
 def main():

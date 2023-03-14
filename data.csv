@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 name age
 ajmal 21
 najad 22
 varis 22
+=======
+﻿name,age
+ajmal,21
+varis,22
+>>>>>>> 8ce31cf (python works)
