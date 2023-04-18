@@ -4,7 +4,37 @@ import openpyxl
 workbook = openpyxl.Workbook()
 worksheet = workbook.active
 # set the column headers and format them
-headers = ["matcode", "qty", "bpcode", "bpmatcode"]
+headers = [
+    "matcode",
+    "title",
+   "ref",
+    "au",
+    "safstk",
+    "reorder",
+   "ar",
+    "desk",
+    "ordcst",
+    "eoq",
+    "lt",
+    "safty",
+    "auamt",
+    "spare",
+    "gr",
+   "nm",
+   "pstock",
+   "ind",
+   "nsaftystk",
+   "specno",
+   "matgroup",
+   "section",
+   "group_b",
+    "group_c",
+    "group_a",
+   "abc",
+   "reordqty",
+    "unitrate",
+    "dwgno",
+]
 for col, header in enumerate(headers, start=1):
     cell = worksheet.cell(row=1, column=col)
     cell.value = header
@@ -27,7 +57,7 @@ conn.autocommit = True
 cursor = conn.cursor()
 
 #Retrieving data
-cursor.execute('''SELECT * from bom''')
+cursor.execute('''SELECT * from bhelksgd.mtlsmast''')
 
 #Fetching 1st row from the table
 
@@ -42,7 +72,7 @@ for row, record in enumerate(data, start=2):
         cell = worksheet.cell(row=row, column=col)
         cell.value = value
 # save the Excel file
-workbook.save("bom.xlsx")
+workbook.save("material.xlsx")
 
 #Closing the connection
 conn.close()
